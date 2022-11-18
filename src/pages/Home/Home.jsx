@@ -50,6 +50,229 @@ export default function Home() {
 
           </div>
 
+          {/* Main content */}
+          <div>
+            <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li className="nav-item" role="presentation">
+                <button className="nav-link active" id="pills-home-tab" data-toggle="pill" data-target="#pills-update" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Mới cập nhật</button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button className="nav-link" id="pills-profile-tab" data-toggle="pill" data-target="#pills-mon" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Mon/ Thứ Hai</button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button className="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-tue" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Tue/ Thứ Ba</button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button className="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-tue" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Tue/ Thứ Ba</button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button className="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-wed" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Wed/ Thứ Tư</button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button className="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-thu" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Thu/ Thứ Năm</button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button className="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-fri" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Fri/ Thứ Sáu</button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button className="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-sat" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Sat/ Thứ Bảy</button>
+              </li>
+              <li className="nav-item" role="presentation">
+                <button className="nav-link" id="pills-contact-tab" data-toggle="pill" data-target="#pills-sun" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Sun/ Chủ Nhật</button>
+              </li>
+            </ul>
+            <div className="tab-content" id="pills-tabContent">
+              <div className="tab-pane fade show active" id="pills-update" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div className="row">
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="card">
+                      <img className="card-img" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/bologna-3.jpg" alt="Bologna" />
+                      <div className="card-img-overlay text-white d-flex flex-column justify-content-center">
+                        <div className="link d-block">
+                          <a href="#" className="card-link text-warning">Read More</a>
+                          <a href="#" className="card-link text-warning">Book a Trip</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div className="tab-pane fade" id="pills-mon" role="tabpanel" aria-labelledby="pills-profile-tab">Mon/ Thứ Hai</div>
+              <div className="tab-pane fade" id="pills-tue" role="tabpanel" aria-labelledby="pills-contact-tab">Tue/ Thứ Ba</div>
+              <div className="tab-pane fade" id="pills-wed" role="tabpanel" aria-labelledby="pills-contact-tab">Wed/ Thứ Tư</div>
+              <div className="tab-pane fade" id="pills-thu" role="tabpanel" aria-labelledby="pills-contact-tab">Thu/ Thứ Năm</div>
+              <div className="tab-pane fade" id="pills-fri" role="tabpanel" aria-labelledby="pills-contact-tab">Fri/ Thứ Sáu</div>
+              <div className="tab-pane fade" id="pills-sat" role="tabpanel" aria-labelledby="pills-contact-tab">Sat/ Thứ Bảy</div>
+              <div className="tab-pane fade" id="pills-sun" role="tabpanel" aria-labelledby="pills-contact-tab">Sun/ Chủ Nhật</div>
+            </div>
+          </div>
+
 
         </div>
         <div className="col-3">
@@ -69,6 +292,54 @@ export default function Home() {
             </div>
             {/* Sidebar movie content  */}
             <div className="right-Xh__mvWrap">
+              <ul className='list-unstyled'>
+                <li>
+                  <img className='rightSi__img' src="https://hoathinh3d.com/wp-content/uploads/2022/09/dau-pha-thuong-khung-phan-5-gia-nam-hoc-vien-1321-300x450.jpg" alt="" />
+                  <div className="rightSi__content">
+                    <ul className='list-unstyled'>
+                      <li className='rightSi__mvName'>Đấu Phá Thương Khung Phần 5</li>
+                      <li className='rightSi__mvEngName'>Fights Break Sphere 5</li>
+                      <li className='rightSi__view'>4.2K lượt xem</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <ul className='list-unstyled'>
+                <li>
+                  <img className='rightSi__img' src="https://hoathinh3d.com/wp-content/uploads/2022/09/dau-pha-thuong-khung-phan-5-gia-nam-hoc-vien-1321-300x450.jpg" alt="" />
+                  <div className="rightSi__content">
+                    <ul className='list-unstyled'>
+                      <li className='rightSi__mvName'>Đấu Phá Thương Khung Phần 5</li>
+                      <li className='rightSi__mvEngName'>Fights Break Sphere 5</li>
+                      <li className='rightSi__view'>4.2K lượt xem</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <ul className='list-unstyled'>
+                <li>
+                  <img className='rightSi__img' src="https://hoathinh3d.com/wp-content/uploads/2022/09/dau-pha-thuong-khung-phan-5-gia-nam-hoc-vien-1321-300x450.jpg" alt="" />
+                  <div className="rightSi__content">
+                    <ul className='list-unstyled'>
+                      <li className='rightSi__mvName'>Đấu Phá Thương Khung Phần 5</li>
+                      <li className='rightSi__mvEngName'>Fights Break Sphere 5</li>
+                      <li className='rightSi__view'>4.2K lượt xem</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <ul className='list-unstyled'>
+                <li>
+                  <img className='rightSi__img' src="https://hoathinh3d.com/wp-content/uploads/2022/09/dau-pha-thuong-khung-phan-5-gia-nam-hoc-vien-1321-300x450.jpg" alt="" />
+                  <div className="rightSi__content">
+                    <ul className='list-unstyled'>
+                      <li className='rightSi__mvName'>Đấu Phá Thương Khung Phần 5</li>
+                      <li className='rightSi__mvEngName'>Fights Break Sphere 5</li>
+                      <li className='rightSi__view'>4.2K lượt xem</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
               <ul className='list-unstyled'>
                 <li>
                   <img className='rightSi__img' src="https://hoathinh3d.com/wp-content/uploads/2022/09/dau-pha-thuong-khung-phan-5-gia-nam-hoc-vien-1321-300x450.jpg" alt="" />

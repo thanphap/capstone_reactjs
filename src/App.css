@@ -42,3 +42,10 @@
   height: 95px;
   width: 75px;
 }
+
+body{
+  padding: 2rem 0rem;
+}
+.card-img-overlay {
+  background-color: rgba(#000, 0.4);
+}
