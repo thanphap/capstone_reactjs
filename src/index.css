@@ -24,11 +24,20 @@ body.halimthemes {
     font-family: montserrat,sans-serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-    /* background: #222d38 url(assets/images/halimBg.png) fixed center; */
+    /* background-color: #222d38; */
     -webkit-transition: background-color 150ms ease-out!important;
     transition: background-color 150ms ease-out!important
 }
-
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #222d38;
+}
 a {
     color: #87c3f9
 }
@@ -171,7 +180,14 @@ img:hover {
     margin: 10px 0
 }
 
-.container {
+.nav {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .navbar-container {
@@ -684,7 +700,7 @@ button,input {
     width: auto;
     clear: both;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .halim-news-box-widget .halim_box {
@@ -6693,7 +6709,7 @@ span.ajax-update-eps:hover {
     position: relative;
     width: 20px;
     height: 25px;
-    top: -3px;
+    top: -13px;
     margin: 0 7px;
     fill: #9caec0
 }
@@ -6702,7 +6718,7 @@ span.ajax-update-eps:hover {
     position: relative;
     width: 20px;
     height: 30px;
-    top: -1px;
+    top: -12px;
     right: 2px;
     margin: 0 2px;
     fill: #9caec0
