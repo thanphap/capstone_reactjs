@@ -1,38 +1,317 @@
-.App {
-  text-align: center;
+/* carousel  */
+.owl-next, .owl-prev {
+    background: rgba(255,152,0,.75);
+    color: #fff;
+    border-radius: 3px;
+    padding: 8px 5px;
+    position: absolute;
+    width: auto;
+    bottom: auto;
+    top: 38%;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right,#f5ce62,#e43603,#fa7199,#e85a19);
+    box-shadow: 0 4px 15px 0 rgb(229 66 10 / 75%);
+    transition: .7s;
+    border: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.owl-prev {
+    left: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.owl-next{
+    right: 30px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.owl-prev:hover, .owl-next:hover {
+    background-position: right center;
 }
 
-.App-link {
-  color: #61dafb;
+.slide-text {
+    background: rgba(0,0,0,.68);
+    color: #fff;
+    padding: 15px 30px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.owl-dots {
+    top: inherit;
+    left: auto;
+    margin: 0;
 }
+
+.owl-dots .owl-dot{
+    opacity: 1;
+    border: 0;
+    background: #52a7f1;
+    width: 27px;
+    height: 8px;
+    margin: 7px;
+}
+
+.owl-dot.active, .owl-dot:hover{
+    background: #8bc34a;
+}
+
+
+.halim_box {
+    list-style: none;
+    padding: 0;
+    margin: 10px -2px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.halim_box .grid-item {
+    padding: 2px;
+    position: relative;
+}
+
+.halim-item {
+    position: relative;
+    line-height: 0;
+    border-radius: 5px;
+}
+
+.halim_box a.halim-thumb {
+    position: relative;
+    display: inline-block;
+    transition: all .7s ease;
+    width: 100%;
+}
+
+figure {
+    display: block;
+    margin: 0;
+}
+
+.grid-item figure {
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.grid-item img {
+    height: 260px;
+    max-height: 260px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.halim-post-title-box {
+    position: absolute;
+    line-height: 18px;
+    padding: 80px 0 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(6,6,6,0.55) 30%,rgba(0,0,0,0.92) 100%);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.halim-post-title {
+    position: absolute;
+    background: transparent;
+    line-height: 18px;
+    padding: 8px 10px 4px;
+    margin: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.halim-post-title h2 {
+    font-size: 13px;
+    color: #fff;
+    overflow: hidden;
+    margin-bottom: 3px;
+    margin: 0;
+    line-height: 20px;
+}
+
+.grid-item .icon_overlay, .slider-thumb .icon_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    background-image: linear-gradient(to bottom,rgba(235,20,54,0.9) 0%,rgba(123,67,151,0.9) 100%);
+}
+
+.grid-item:hover img, #sidebar .item:hover img, .popular-post .item:hover img {
+    transform: scale(1.2);
+    transition: all .3s ease-in-out;
+}
+
+.grid-item:hover .icon_overlay, .slider-thumb:hover .icon_overlay {
+    opacity: .75;
+    border-radius: 5px;
+}
+
+a.see-more {
+    background: #1f2933;
+    width: 30%;
+    display: inline-block;
+    text-align: right;
+    margin: 5px 0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: .5s all;
+    color: #fff;
+    background: linear-gradient(to right,#151d25,#194161);
+}
+
+a.see-more:hover {
+    background: #0e1215;
+    transition: .5s all;
+}
+
+/* rap chieu */
+
+.halim_rap {
+    list-style: none;
+    padding: 0;
+    margin: 0px -5px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.halim_rap .grid-rap {
+    padding: 5px;
+    position: relative;
+}
+
+/* sidebar */
+.section-bar {
+    position: relative;
+    margin: 15px 0;
+}
+
+.section-title {
+    font-size: 16px;
+    line-height: 11px;
+    margin: 0;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: flow-root;
+}
+
+.section-title:before {
+    content: '';
+    border-bottom: 1px solid #1e2732;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.section-title span {
+    position: relative;
+    float: left;
+    font-size: 15px;
+    padding: 10px 0;
+    color: #a5cbef;
+    background: linear-gradient(to right,#ff8a00,#ff2070);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-decoration-break: clone;
+    font-weight: 700;
+}
+
+.section-title span:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to right,#ff8a00,#ff2070);
+    padding: 0.5px;
+}
+
+.section-title span::after {
+    content: '';
+}
+
+.popular-post {
+    padding: 0;
+    margin: 0 0 25px;
+}
+
+.popular-post .item {
+    clear: both;
+    margin: 1px 0;
+    padding-right: 10px;
+    line-height: 1.2;
+    list-style-type: none;
+    overflow: hidden;
+    background: #0b0f15;
+    background-size: 200% 100%;
+    background-image: linear-gradient(to right,#151d25 0%,#11151500 51%,#060808 50%);
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.popular-post .item:first-child {
+    margin-top: 0;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+}
+
+.popular-post .item:hover {
+    background-position: right center;
+}
+
+.popular-post a {
+    color: #717171;
+}
+
+.popular-post .item-link {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    margin-right: 15px;
+    padding: 0;
+    float: left;
+}
+
+.blur-up.lazyloaded {
+    filter: blur(0);
+}
+
+.popular-post .post-thumb {
+    float: left;
+    width: 75px;
+    height: 95px;
+    transition: all .3s ease-in-out;
+}
+
+.popular-post h3.title {
+    color: #d8d8d8;
+    cursor: pointer;
+    margin: 10px 0 5px;
+    font-size: 13px;
+    line-height: 20px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-flex: 1;
+    -webkit-box-orient: vertical;
+}
+
+.halim-post-title .original_title, .popular-post .original_title {
+    font-size: 11.5px!important;
+    margin: 0;
+    padding-right: 5px;
+    color: #8a9eaf;
+}
+
+.popular-post .viewsCount {
+    font-size: 11px;
+    margin-top: 5px;
+    color: #e7ac32;
+}
+

@@ -1,13 +1,13 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
 
 import thunk from "redux-thunk";
-import { FilmReducer } from "./reducers/FilmReducer";
-import { UserReducer } from "./reducers/UserReducer";
+import { filmReducer } from "./reducers/filmReducer";
+import { userReducer } from "./reducers/userReducer";
 
 
 const rootReducer = combineReducers({
-    FilmReducer,
-    UserReducer
+    filmReducer,
+    userReducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
