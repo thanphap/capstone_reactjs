@@ -18,10 +18,13 @@ a, a:hover, a:focus {
   color: #d0d0d0;
 }
 
+.navbar-toggler{
+  color: #d0d0d0;
+  font-size: 1.5em;
+}
+
 header {
   background: #1b2d3c;
-  /* background-size: 200% 100%;
-  background-image: linear-gradient(to right,#234a71 0%,#101519 51%,#151d25 100%); */
 }
 
 header .dropdown-toggle{
@@ -133,6 +136,11 @@ header .nav-item:hover{
     -webkit-text-fill-color: transparent;
 }
 
+.detail-date{
+  cursor: pointer;
+}
+
+
 .detail_trailer{
   color: white;
   text-align: center;
@@ -161,20 +169,30 @@ header .nav-item:hover{
 
 .list-group-item{
   padding: 0.8rem;
-  background-color: transparent;
+  text-align: center;
+  background-color: #0b0f15;
+  overflow: hidden;
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right,#151d25 0%,#11151500 51%,#060808 50%);
   border: 1px solid #f8f9fa;
   opacity: 0.7;
+  transition: all .3s;
 }
 
 .list-group-item.active{
-  background-color: #f8f9fa24;
+  background-position: right center;
+  /* background-color: #f8f9fa24; */
+  background-color: transparent;
   border: 1px solid #f8f9fa;
   opacity: 1;
 }
 
 .list-group-item-action:hover {
   opacity: 1;
-  background-color: #f8f9fa3c;
+  /* background-color: #f8f9fa3c; */
+  background-color: transparent;
+  background-position: right center;
+  
 }
 
 .modal-title{
@@ -211,6 +229,7 @@ a.logo{
 .title_logo{
   font-size: 20px;
   font-weight: 600;
+  padding-left: 0.5rem;
 }
 
 footer li{
@@ -221,5 +240,6 @@ footer ul{
   padding: 0;
   margin: 0;
 }
+
 
 

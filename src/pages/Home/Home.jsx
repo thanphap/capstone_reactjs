@@ -79,7 +79,7 @@ export default function Home() {
     let listMovie = mangPhim.filter(item => item.dangChieu == true)
     let movies = listMovie.length < 8 ? listMovie : listMovie.slice(0, 8);
     return movies.map((phim) => {
-      return <div className="col-3 grid-item" key={phim.maPhim}>
+      return <div className="col-6 col-md-3 grid-item" key={phim.maPhim}>
         <div className="halim-item">
           <NavLink className="halim-thumb" to={`/detail/${phim.maPhim}`}>
             <figure>
@@ -216,9 +216,9 @@ export default function Home() {
   }
 
   return (
-    <div className='container content'>
+    <div className='container-md content'>
       <div className="row">
-        <div className="col-9">
+        <div className="col-md-12 col-lg-8" id='main__content'>
           <div id="carouselBanner" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators owl-dots">
               {renderDotBanner()}
@@ -255,12 +255,12 @@ export default function Home() {
                   {renderCinema()}
                 </div>
               </div>
-              <div className="col-4 grid-rap">
+              <div className="col-10 col-sm-4 grid-rap">
                 <div className="popular-post">
                   {renderListCumRap()}
                 </div>
               </div>
-              <div className="col-6 grid-rap">
+              <div className="col-12 col-sm-6 grid-rap">
                 <div className="popular-post">
                   {renderListMovieCinema()}
                 </div>
@@ -268,7 +268,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col-3">
+        <div id='sidebar' className="col-md-12 col-lg-4 col-lg-4">
           <div className="section-bar">
             <div className="section-title">
               <span>PHIM SẮP CHIẾU</span>

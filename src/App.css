@@ -95,7 +95,6 @@ figure {
 
 .grid-item img {
     height: 260px;
-    max-height: 260px;
     width: 100%;
     border-radius: 5px;
 }
@@ -213,7 +212,7 @@ a.see-more:hover {
 .section-title span {
     position: relative;
     float: left;
-    font-size: 15px;
+    font-size: 18px;
     padding: 10px 0;
     color: #a5cbef;
     background: linear-gradient(to right,#ff8a00,#ff2070);
@@ -314,4 +313,132 @@ a.see-more:hover {
     margin-top: 5px;
     color: #e7ac32;
 }
+
+@media (min-width: 1200px){
+    #main__content {
+        flex: 0 0 840px;
+        max-width: 840px;
+    }
+    #sidebar {
+        flex: 0 0 300px;
+        max-width: 300px;
+    }
+}
+
+
+
+@media only screen and (max-width: 1100px){
+    .grid-item img {
+        height: 230px;
+    }
+}
+@media only screen and (max-width: 1024px){
+    .grid-item img {
+        height: 210px;
+    }
+}
+@media only screen and (max-width: 955px){
+    .grid-item img {
+        height: 230px;
+    }
+}
+@media only screen and (max-width: 980px){
+    .grid-item img {
+        height: 240px;
+    }
+}
+@media only screen and (max-width: 880px){
+    .grid-item img {
+        height: 250px;
+    }
+}
+@media only screen and (max-width: 800px){
+    .grid-item img {
+        height: 240px;
+    }
+}
+@media only screen and (max-width: 780px){
+    .grid-item img {
+        height: 240px;
+    }
+}
+@media only screen and (max-width: 776px){
+    .grid-item img {
+        height: 260px;
+    }
+}
+@media only screen and (max-width: 767px){
+    .grid-item img {
+        height: 470px;
+    }
+}
+@media only screen and (max-width: 720px){
+    .grid-item img {
+        height: 480px;
+    }
+}
+@media only screen and (max-width: 640px){
+    .grid-item img {
+        height: 390px;
+    }
+}
+@media only screen and (max-width: 620px){
+    .grid-item img {
+        height: 320px;
+    }
+}
+@media only screen and (max-width: 600px){
+    .grid-item img {
+        height: 350px;
+    }
+}
+@media only screen and (max-width: 568px){
+    .grid-item img {
+        height: 320px;
+    }
+}
+@media only screen and (max-width: 563px){
+    .grid-item img {
+        height: 320px;
+    }
+}
+
+@media only screen and (max-width: 549px){
+    .grid-item img {
+        height: 345px;
+    }
+}
+@media only screen and (max-width: 534px){
+    .grid-item img {
+        height: 320px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

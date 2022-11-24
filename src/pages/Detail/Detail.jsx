@@ -85,13 +85,13 @@ export default function Detail(props) {
                 return <li key={date} onClick={() => {
                     getTimeMovie(cumRapChieu, date);
                     setdateActive(dateMovie.indexOf(date));
-                }} className="nav-item"><span className="nav-link active">{date}</span></li>
+                }} className="nav-item detail-date"><span className="nav-link active">{date}</span></li>
             }
             else {
                 return <li key={date} onClick={() => {
                     getTimeMovie(cumRapChieu, date);
                     setdateActive(dateMovie.indexOf(date));
-                }} className="nav-item"><span className="nav-link">{date}</span></li>
+                }} className="nav-item detail-date"><span className="nav-link">{date}</span></li>
             }
 
         })
@@ -140,14 +140,14 @@ export default function Detail(props) {
                                             <li onClick={() => {
                                                 setdateActive(dateActive > 0 ? dateActive - 1: 0);
                                                 getTimeMovie(cumRapChieu, dateMovie[dateActive > 0 ? dateActive - 1: 0]);
-                                            }} className="nav-item">
+                                            }} className="nav-item detail-date">
                                                 <span className="nav-link"><i className="fa fa-chevron-left" aria-hidden="true" /></span>
                                             </li>
                                             {renderDay()}
                                             <li onClick={() => {
                                                 getTimeMovie(cumRapChieu, dateMovie[dateActive < dateMovie.length -1 ? dateActive + 1: dateMovie.length-1]);
                                                 setdateActive(dateActive < dateMovie.length-1 ? dateActive + 1: dateMovie.length-1);
-                                            }} className="nav-item">
+                                            }} className="nav-item detail-date">
                                                 <span className="nav-link"><i className="fa fa-chevron-right" aria-hidden="true" /></span>
                                             </li>
                                         </ul>
