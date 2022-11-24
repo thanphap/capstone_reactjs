@@ -15,6 +15,7 @@ import Ticketroom from './pages/Ticketroom/Ticketroom';
 import Register from './pages/Register/Register';
 import Profile from './pages/Profile/Profile';
 import AddFilm from './pages/Admin/Films/AddFilm';
+import Coming from './pages/Coming/Coming';
 
 export const history = createBrowserHistory();
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Switch>
         <HomeTemplate exact path="/home" component={Home}/>
         <HomeTemplate exact path="/show" component={Listfilm}/>
+        <HomeTemplate exact path="/coming" component={Coming}/>
         <HomeTemplate exact path="/profile" component={Profile}/>
         <HomeTemplate exact path="/detail/:maPhim" component={Detail}/>
         <HomeTemplate exact path="/ticketroom/:maLichChieu" component={Ticketroom}/>

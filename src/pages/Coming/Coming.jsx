@@ -4,7 +4,7 @@ import { listFilmAction } from '../../redux/action/filmAction';
 import { GP_ID} from '../../util/setting';
 import { NavLink } from 'react-router-dom'
 
-export default function Listfilm() {
+export default function Coming() {
     let { mangPhim } = useSelector(state => state.filmReducer)
     let dispatch = useDispatch();
     useEffect(() => {
@@ -12,7 +12,7 @@ export default function Listfilm() {
     }, [])
 
     let renderListMovie = () => {
-      let listMovie = mangPhim.filter(item => item.dangChieu === true)
+      let listMovie = mangPhim.filter(item => item.sapChieu === true)
         return listMovie.map((phim) => {
           return <div className="col-6 col-md-3 col-lg-2 grid-item" key={phim.maPhim}>
             <div className="halim-item">
@@ -42,7 +42,7 @@ export default function Listfilm() {
         <div className='container content'>
             <div className="section-bar">
             <div className="section-title">
-              <span>PHIM ĐANG CHIẾU</span>
+              <span>PHIM SẮP CHIẾU</span>
             </div>
             <div className="row halim_box">
               {renderListMovie()}

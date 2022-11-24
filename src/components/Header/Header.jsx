@@ -26,10 +26,10 @@ export default function Header() {
     if (uLogin == null) {
       return <Fragment>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/login">Đăng nhập</NavLink>
+          <NavLink className="nav-link" to="/login"><i className="fa fa-sign-in" aria-hidden="true"/> Đăng nhập</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/register">Đăng ký</NavLink>
+          <NavLink className="nav-link" to="/register"><i className="fa fa-registered" aria-hidden="true" /> Đăng ký</NavLink>
         </li>
       </Fragment>
     }
