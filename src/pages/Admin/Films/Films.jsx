@@ -25,7 +25,6 @@ export default function Films() {
     {
       title: 'Mã phim',
       dataIndex: 'maPhim',
-      key:'maPhim'
     },
     {
       title: 'Hình ảnh',
@@ -87,7 +86,7 @@ export default function Films() {
         <Fragment >
           <h2 className='text-body'>Quản lý phim</h2>
           <button className="btn btn-success m-3">Thêm phim</button>
-          <Table columns={columns} dataSource={mangPhim} onChange={onChange} />;
+          <Table rowKey="id" columns={columns}  dataSource={mangPhim} onChange={onChange} />;
         </Fragment>
   );
 };

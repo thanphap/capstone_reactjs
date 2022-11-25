@@ -236,6 +236,7 @@ export const addFilmAction = (dataPhim=[]) => {
                 }
             })
             promise.then((result) => {
+                console.log(result);
                 let action2 = {
                     type: ADD_PHIM,
                     resultTicket: result.data.content,

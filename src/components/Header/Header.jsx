@@ -46,7 +46,7 @@ export default function Header() {
       <div className="menu">
         <div className="container">
           <nav className="navbar navbar-expand-lg p-0">
-            <NavLink className="navbar-brand" to="/home"><img src={LogoImg} alt="" /><span className="title_logo">PHIM HAY</span> </NavLink>
+            <NavLink className="navbar-brand logo" to="/home"><img src={LogoImg} alt="" /><span className="title_logo">PHIM HAY</span> </NavLink>
             <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
               <i className="fa fa-bars" aria-hidden="true" />
             </button>
