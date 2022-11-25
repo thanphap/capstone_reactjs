@@ -21,17 +21,6 @@
     /* background-color: rgba(0,0,0,0.8); */
 }
 
-
-.ghe{
-    border: 3px solid orange;
-    width: 35px;
-    height: 25px;
-    font-size: 12px;
-    /* margin-left: 2%; */
-    margin-bottom: 1%;
-    border-radius: 5px;
-}
-
 .rowNumber{
     /* font-size: 25px; */
     width: 45px;
@@ -45,12 +34,6 @@
     
 }
 
-.firstChar{
-    color: yellow;
-    font-size: 30px;
-    margin-right: 15px;
-
-}
 
 .screen{
     border-bottom: 50px solid rgb(255, 159, 95);
@@ -64,15 +47,32 @@
     color: #fff;
 }
 
+th{
+    padding: 0 0.2em;
+}
+
+.firstChar {
+    color: yellow;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.ghe {
+    width: 2.6em;
+    height: 2em;
+    font-size: 0.5em;
+    border-radius: 3px;
+    padding: 0;
+}
+
+.gheThuong{
+    border: 3px solid orange;
+}
 
 .gheVip {
     border: 3px solid white;
     background: orange;
     color: #000;
-    border-radius: 5px;
-    width: 35px;
-    height: 25px;
-    font-size: 12px;
 } 
 
 .gheDuocChon {
@@ -80,10 +80,6 @@
     background: rgb(0, 183, 255);
     color: #000;
     cursor: no-drop !important;
-    border-radius: 5px;
-    width: 35px;
-    height: 25px;
-    font-size: 12px;
 }
 
 .gheDangChon {
@@ -91,16 +87,7 @@
     border: 3px solid rgb(109, 238, 109);
     color: #000;
     cursor: pointer;
-    border-radius: 5px;
-    width: 35px;
-    height: 25px;
-    font-size: 12px;
 }
-
-th{
-    padding: 0 0.2em;
-}
-
 
 .modal-key{
     color: rgb(0, 183, 255);
@@ -108,4 +95,101 @@ th{
 
 .modal-value{
     color: #ffc107;
+}
+
+/* Reponsive */
+
+@media (min-width: 512px){
+   
+    .firstChar {
+        font-size: 1.5em;
+        margin-right: 10px;
+    }
+
+    .ghe {
+        width: 2.5em;
+        height: 17px;
+        font-size: 0.5em;
+        border-radius: 3px;
+        padding: 0;
+    }
+}
+
+@media (min-width: 600px){
+    .firstChar {
+        font-size: 1.5em;
+        margin-right: 10px;
+    }
+
+    .ghe {
+        width: 3em;
+        height: 17px;
+        font-size: 0.5em;
+        border-radius: 3px;
+        padding: 0;
+    }
+}
+
+@media (min-width: 690px){
+    .firstChar{
+        font-size: 30px;
+        margin-right: 15px;
+    
+    }
+    .ghe{
+        width: 2.5em;
+        height: 25px;
+        font-size: 0.8em;
+        border-radius: 5px;
+        padding: 0;
+    }
+}
+
+@media (min-width: 750px){
+    .firstChar{
+        font-size: 30px;
+        margin-right: 15px;
+    
+    }
+    .ghe{
+        width: 35px;
+        height: 25px;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 992px){
+    th{
+        padding: 0 0.5em;
+    }
+    .firstChar {
+        font-size: 1.5em;
+        margin-right: 15px;
+    }
+
+    .ghe {
+        width: 3.2em;
+        height: 25px;
+        font-size: 12px;
+        border-radius: 5px;
+    }
+}
+
+@media (min-width: 1200px){
+    th{
+        padding: 0 0.2em;
+    }
+    .firstChar{
+        font-size: 30px;
+        margin-right: 15px;
+    
+    }
+    .ghe{
+        width: 35px;
+        height: 25px;
+        font-size: 12px;
+        margin-bottom: 1%;
+        border-radius: 5px;
+    }
 }

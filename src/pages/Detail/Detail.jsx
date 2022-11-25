@@ -81,7 +81,7 @@ export default function Detail(props) {
     let renderDay = () => {
         let dates = dateActive - 5 >= 0 ? dateMovie.slice(dateActive-5, dateActive + 1) : dateMovie.slice(0, 6);
         return dates.map((date, index) => {
-            if (date == dateMovie[dateActive]) {
+            if (date === dateMovie[dateActive]) {
                 return <li key={date} onClick={() => {
                     getTimeMovie(cumRapChieu, date);
                     setdateActive(dateMovie.indexOf(date));
@@ -106,10 +106,10 @@ export default function Detail(props) {
     let renderDetail = () => {
         if (movieSchedule.length !== 0) {
             return <div className="row">
-                <div className="col-4 py-2">
+                <div className="col-lg-4 py-2 text-center">
                     <img className='img-fluid' src={movieSchedule.hinhAnh} alt="" />
                 </div>
-                <div className="col-8">
+                <div className="col-lg-8">
                     <h3>{movieSchedule.tenPhim}</h3>
                     <div className='py-2 detail-rating'><i className="fa fa-star" aria-hidden="true" /><span className='detail-score'>{movieSchedule.danhGia}</span>/10</div>
                     <p>Ngày khởi chiếu: <span className='detail-info'>{Moment(movieSchedule.ngayKhoiChieu).format('D/MM/YYYY')}</span></p>
@@ -129,13 +129,13 @@ export default function Detail(props) {
                                 <button className="btn mx-3 detail_buy" data-toggle="tab" data-target="#profile" role="tab" aria-controls="profile">Mua vé ngay</button>
                             </div>
                             <div className="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div className="row">
-                                    <div className="col-2 py-2">
+                                <div className="row detail_schedule">
+                                    <div className="col-2 detail_item">
                                         <div className="list-group" role="tablist">
                                             {renderCinema()}
                                         </div>
                                     </div>
-                                    <div className="col-10 py-2">
+                                    <div className="col-10 detail_item">
                                         <ul className="nav justify-content-center border-bottom detail_date">
                                             <li onClick={() => {
                                                 setdateActive(dateActive > 0 ? dateActive - 1: 0);
@@ -176,7 +176,7 @@ export default function Detail(props) {
 
 
     return (
-        <div className='container content'>
+        <div className='container-md content'>
             {renderDetail()}
             <div className="modal fade" id="trailerModal" tabIndex={-1} aria-labelledby="trailerModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-lg">

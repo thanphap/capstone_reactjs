@@ -36,7 +36,7 @@ export default function Ticketroom(props) {
       classChange = 'gheDangChon';
     }
     else {
-      classChange = chair.loaiGhe == 'Vip' ? 'gheVip' : 'ghe';
+      classChange = chair.loaiGhe == 'Vip' ? 'gheVip' : 'gheThuong';
     }
     return <button onClick={() => {
       if (classChange != "gheDuocChon" && classChange != "gheDangChon") {
@@ -45,7 +45,7 @@ export default function Ticketroom(props) {
         let action = addChairAction(chair);
         dispatch(action);
       }
-    }} className={classChange}>{((index + 1) < 10 ? '0' : '') + (index + 1)} </button>
+    }} className={`ghe ${classChange}`}>{((index + 1) < 10 ? '0' : '') + (index + 1)} </button>
   }
   
   let renderChairList = () => {
@@ -91,7 +91,7 @@ export default function Ticketroom(props) {
     if (mangGhe.length !== 0) {
       return <Fragment>
         <div className="row">
-          <div className="col-8 px-3">
+          <div className="col-12 col-xl-8 px-3">
             <h5 className='text-warning'>Cụm chiếu: {mangGhe.thongTinPhim.tenCumRap} - {mangGhe.thongTinPhim.tenRap}</h5>
             <p className='text-white mb-0 text-center'>Màn hình</p>
             <div className='screen'>
@@ -104,13 +104,13 @@ export default function Ticketroom(props) {
               </table>
             </div>
           </div>
-          <div className="col-4 px-3">
+          <div className="col-12 col-xl-4 px-3">
             <h3 className='text-center my-4'>Danh sách ghế bạn chọn</h3>
             <div className='text-left'>
-              <div><button className='gheDuocChon'></button><span className='text-white'> Ghế đã đặt</span></div>
-              <div><button className='gheDangChon'></button><span className='text-white'> Ghế bạn chọn</span></div>
-              <div><button className='ghe'></button><span className='text-white'> Ghế chưa đặt</span></div>
-              <div><button className='gheVip'></button><span className='text-white'> Ghế vip</span></div>
+              <div><button className='ghe gheDuocChon'></button><span className='text-white'> Ghế đã đặt</span></div>
+              <div><button className='ghe gheDangChon'></button><span className='text-white'> Ghế bạn chọn</span></div>
+              <div><button className='ghe gheThuong'></button><span className='text-white'> Ghế chưa đặt</span></div>
+              <div><button className='ghe gheVip'></button><span className='text-white'> Ghế vip</span></div>
             </div>
             <div className='text-center'>
               <h3>{mangGhe.thongTinPhim.tenPhim}</h3>
@@ -196,6 +196,6 @@ export default function Ticketroom(props) {
   }
 
   return (
-    <div className='container content bookingMovie py-3'>{renderContent()}</div>
+    <div className='container-md content bookingMovie py-3'>{renderContent()}</div>
   )
 }

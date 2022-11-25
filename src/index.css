@@ -241,5 +241,24 @@ footer ul{
   margin: 0;
 }
 
+/* Reponsive */
+@media (max-width: 630px){
+  .detail_date .nav-link{
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 576px){
+  .detail_date .nav-link{
+    padding: 0.5rem 0.5rem;
+  }
+  .detail_schedule{
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  .detail_item{
+    padding: 5px 5px;
+  }
+}
 
 
