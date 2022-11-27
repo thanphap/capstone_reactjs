@@ -16,10 +16,13 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
-  getItem('Tài khoản', 'sub1', <UserOutlined />, [
-    getItem('Tom', '2'),
+  getItem('Quản lý tài khoản', 'sub1', <UserOutlined />, [
+    getItem('Tài khoản', '/admin/users'),
+    getItem('Thêm tài khoản', '/admin/adduser'),
   ]),
-  getItem('Quản lý phim', 'sub2', <FileOutlined />, [getItem('Phim', '/admin'), getItem('Thêm mới', '/admin/addfilm')]),
+  getItem('Quản lý phim', 'sub2', <FileOutlined />, [
+    getItem('Phim', '/admin/film'), 
+    getItem('Thêm mới', '/admin/addfilm')]),
 ];
 export const AdminTemplate = (props) => {
   const [collapsed, setCollapsed] = useState(false);
@@ -30,7 +33,7 @@ export const AdminTemplate = (props) => {
           <NavLink className="logo" to="/home"><img src={LogoImg} alt="" /><span className="title_logo">PHIM HAY</span> </NavLink>
           <Menu  onClick={(link) => { 
               history.push(link.key);
-           }} theme="dark" defaultSelectedKeys={['/admin']} mode="inline" items={items} />
+           }} theme="dark" defaultSelectedKeys={['/admin/film']} mode="inline" items={items} />
         </Sider>
         <Layout className="site-layout">
           <Header/>
@@ -38,7 +41,7 @@ export const AdminTemplate = (props) => {
             <props.component {...propsRouter} />
           </Content>
           <Footer style={{ textAlign: 'center', }} >
-            Ant Design ©2018 Created by Ant UED
+            Copyright by Q
           </Footer>
         </Layout>
       </Layout>

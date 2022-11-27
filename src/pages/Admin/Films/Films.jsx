@@ -1,25 +1,22 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom'
-import { listFilmAction, removeFilmAction } from '../../../redux/action/filmAction';
+import { listFilmAction, removeFilmAction, setAlertFilmAction } from '../../../redux/action/filmAction';
 import { GP_ID } from '../../../util/setting';
-import { Table } from 'antd';
-import { Button, Modal, Space } from 'antd';
+import { history } from "../../../App"
+import { Table, Modal } from 'antd';
 
 export default function Films() {
-  let { mangPhim, resultTicket } = useSelector(state => state.filmReducer)
-  console.log(mangPhim)
-
+  let { mangPhim, arletContent } = useSelector(state => state.filmReducer)
   let dispatch = useDispatch();
   useEffect(() => {
-    getAPI()
+    getFilmsAPI()
   }, [])
 
   useEffect(() => {
-    if (resultTicket !== '') {
+    if (arletContent !== '') {
       info()
     }
-  }, [resultTicket])
+  }, [arletContent])
 
   const columns = [
     {
@@ -53,40 +50,43 @@ export default function Films() {
       dataIndex: '',
       width: '15%',
       render: (t, r) => <div>
-        <button className='btn btn-info'>Sửa</button>
         <button onClick={() => {
-            let action = removeFilmAction(r.maPhim);
-            dispatch(action);
+          history.push(`/admin/editfilm/${r.maPhim}`);
+        }} className='btn btn-info'>Sửa</button>
+        <button onClick={() => {
+          let action = removeFilmAction(r.maPhim);
+          dispatch(action);
         }} className='btn btn-danger ml-1'>Xóa</button></div>,
     },
   ];
 
-  const onChange = (pagination, filters, sorter, extra) => {
-    console.log('params', pagination, filters, sorter, extra);
-  };
-
   let info = () => {
     Modal.info({
-      title: 'This is a notification message',
+      title: 'Thông báo',
       content: (
         <div>
-          <p>{resultTicket}</p>
+          <p>{arletContent}</p>
         </div>
       ),
-      onOk() { },
+      onOk() {
+        let action = setAlertFilmAction('');
+        dispatch(action);
+      },
     });
   };
 
-  let getAPI = () => {
+  let getFilmsAPI = () => {
     let action = listFilmAction(GP_ID);
     dispatch(action);
   }
 
   return (
-        <Fragment >
-          <h2 className='text-body'>Quản lý phim</h2>
-          <button className="btn btn-success m-3">Thêm phim</button>
-          <Table rowKey="id" columns={columns}  dataSource={mangPhim} onChange={onChange} />;
-        </Fragment>
+    <Fragment >
+      <h2 className='text-body'>Quản lý phim</h2>
+      <button onClick={() => {
+        history.push('/admin/addfilm');
+      }} className="btn btn-success m-3">Thêm phim</button>
+      <Table rowKey='maPhim' columns={columns} dataSource={mangPhim}/>;
+    </Fragment>
   );
 };

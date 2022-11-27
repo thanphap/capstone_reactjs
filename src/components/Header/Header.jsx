@@ -35,7 +35,7 @@ export default function Header() {
     }
     else{
       return <li className="nav-item">
-          <NavLink className="nav-link" to="/admin"><i className="fa fa-lock" aria-hidden="true" /> Quản lý</NavLink>
+          <NavLink className="nav-link" to="/admin/film"><i className="fa fa-lock" aria-hidden="true" /> Quản lý</NavLink>
       </li>
     }
   }

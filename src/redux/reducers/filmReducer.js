@@ -1,4 +1,4 @@
-import { DAT_VE_PHIM, LAY_DS_BANNER, LAY_DS_CINEMA, LAY_DS_GHE, LAY_DS_PHIM, LAY_LICHCHIEU, LAY_LICHRAP, THEM_GHE, XOA_GHE, XOA_PHIM } from "../types/filmType";
+import { ADD_PHIM, DAT_VE_PHIM, LAY_DS_BANNER, LAY_DS_CINEMA, LAY_DS_GHE, LAY_DS_PHIM, LAY_LICHCHIEU, LAY_LICHRAP, LAY_PHIM, SET_ALERT, THEM_GHE, UPDATE_PHIM, XOA_GHE, XOA_PHIM } from "../types/filmType";
 
 const initialState = {
   mangBanner: [],
@@ -8,7 +8,8 @@ const initialState = {
   movieSchedule: [],
   mangGhe: [],
   cvmGhe: [],
-  resultTicket: ''
+  resultTicket: '',
+  arletContent:''
 }
 
 export const filmReducer = (state = initialState, action) => {
@@ -73,9 +74,27 @@ export const filmReducer = (state = initialState, action) => {
       return { ...state }
 
     case XOA_PHIM:
-      state.resultTicket = action.resultTicket;
       state.mangPhim = state.mangPhim.filter(item => item.maPhim !== action.maPhim)
+      state.arletContent = action.arletContent;
       return { ...state }
+
+    case ADD_PHIM:
+      state.mangPhim = [...state.mangPhim, action.addPhim];
+      state.arletContent = action.arletContent;
+      return { ...state }
+
+    case UPDATE_PHIM:
+      let index = state.mangPhim.findIndex((phim) => phim.maPhim === action.updatePhim.maPhim)
+      if (index > -1) {
+        state.mangPhim[index] = action.updatePhim
+      }
+      state.arletContent = action.arletContent;
+      return { ...state }
+
+    case SET_ALERT:
+      state.arletContent = action.arletContent;
+      return { ...state }
+
     default:
       return state
   }

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ACCESS_TOKEN, GP_ID, TOKENCYBER, URL_API } from "../../util/setting";
-import { ADD_PHIM, DAT_VE_PHIM, LAY_DS_BANNER, LAY_DS_CINEMA, LAY_DS_GHE, LAY_DS_PHIM, LAY_LICHCHIEU, LAY_LICHRAP, THEM_GHE, XOA_GHE, XOA_PHIM } from "../types/filmType";
+import { ADD_PHIM, DAT_VE_PHIM, LAY_DS_BANNER, LAY_DS_CINEMA, LAY_DS_GHE, LAY_DS_PHIM, LAY_LICHCHIEU, LAY_LICHRAP, LAY_PHIM, SET_ALERT, THEM_GHE, UPDATE_PHIM, XOA_GHE, XOA_PHIM } from "../types/filmType";
 
 export const bannerFilmAction = () => {
     return (dispatch2) => {
@@ -191,6 +191,8 @@ export const oderChairAction = (ticketChair = {}) => {
     }
 }
 
+
+// Quản lý phim
 export const removeFilmAction = (maPhim = '') => {
     return (dispatch2) => {
         if (localStorage.getItem(ACCESS_TOKEN)) {
@@ -205,32 +207,37 @@ export const removeFilmAction = (maPhim = '') => {
             promise.then((result) => {
                 let action2 = {
                     type: XOA_PHIM,
-                    resultTicket: result.data.content,
+                    arletContent: result.data.content,
                     maPhim: maPhim
                 }
                 dispatch2(action2)
             })
             promise.catch((error) => {
                 console.log(error.response?.data);
+                let action2 = {
+                    type: SET_ALERT,
+                    arletContent: error.response?.data
+                }
+                dispatch2(action2)
             })
         }
         else {
             let action2 = {
-                type: XOA_PHIM,
-                resultTicket: "Vui lòng đăng nhập"
+                type: SET_ALERT,
+                arletContent: "Vui lòng đăng nhập"
             }
             dispatch2(action2)
         }
     }
 }
 
-export const addFilmAction = (dataPhim=[]) => {
+export const addFilmAction = (formDataPhim = []) => {
     return (dispatch2) => {
         if (localStorage.getItem(ACCESS_TOKEN)) {
             let promise = axios({
                 method: 'post',
                 url: `${URL_API}/QuanLyPhim/ThemPhimUploadHinh`,
-                data: dataPhim,
+                data: formDataPhim,
                 headers: {
                     'TokenCybersoft': TOKENCYBER,
                 }
@@ -239,21 +246,74 @@ export const addFilmAction = (dataPhim=[]) => {
                 console.log(result);
                 let action2 = {
                     type: ADD_PHIM,
-                    resultTicket: result.data.content,
-                    addPhim:dataPhim
+                    arletContent: result.data.message,
+                    addPhim: result.data.content,
                 }
                 dispatch2(action2)
             })
             promise.catch((error) => {
-                console.log(error.response?.data);
+                let action2 = {
+                    type: SET_ALERT,
+                    arletContent: error.response?.data.content
+                }
+                dispatch2(action2)
             })
         }
         else {
             let action2 = {
-                type:  ADD_PHIM,
-                resultTicket: "Vui lòng đăng nhập"
+                type: SET_ALERT,
+                arletContent: "Vui lòng đăng nhập"
             }
             dispatch2(action2)
         }
+    }
+}
+
+export const updateFilmAction = (formDataPhim = []) => {
+    return (dispatch2) => {
+        if (localStorage.getItem(ACCESS_TOKEN)) {
+            let promise = axios({
+                method: 'post',
+                url: `${URL_API}/QuanLyPhim/CapNhatPhimUpload`,
+                data: formDataPhim,
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem(ACCESS_TOKEN)}`,
+                    'TokenCybersoft': TOKENCYBER
+                }
+            })
+            promise.then((result) => {
+                console.log(result);
+                let action2 = {
+                    type: UPDATE_PHIM,
+                    arletContent: result.data.message,
+                    updatePhim: result.data.content,
+                }
+                dispatch2(action2)
+            })
+            promise.catch((error) => {
+                let action2 = {
+                    type: SET_ALERT,
+                    arletContent: error.response?.data.content
+                }
+                dispatch2(action2)
+            })
+        }
+        else {
+            let action2 = {
+                type: SET_ALERT,
+                arletContent: "Vui lòng đăng nhập"
+            }
+            dispatch2(action2)
+        }
+    }
+}
+
+export const setAlertFilmAction = (arletContent = '') => {
+    return (dispatch2) => {
+        let action2 = {
+            type: SET_ALERT,
+            arletContent: arletContent
+        }
+        dispatch2(action2)
     }
 }

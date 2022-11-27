@@ -9,4 +9,8 @@ export const LAY_DS_CINEMA = "LAY_DS_CINEMA";
 export const LAY_LICHRAP = "LAY_LICHRAP";
 export const XOA_PHIM = "XOA_PHIM";
 export const ADD_PHIM = "ADD_PHIM";
+export const UPDATE_PHIM = "UPDATE_PHIM";
+export const LAY_DETAIL_PHIM = "LAY_DETAIL_PHIM";
+export const SET_ALERT = "SET_ALERT";
+
 
