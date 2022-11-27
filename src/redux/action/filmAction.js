@@ -213,7 +213,6 @@ export const removeFilmAction = (maPhim = '') => {
                 dispatch2(action2)
             })
             promise.catch((error) => {
-                console.log(error.response?.data);
                 let action2 = {
                     type: SET_ALERT,
                     arletContent: error.response?.data
@@ -243,7 +242,6 @@ export const addFilmAction = (formDataPhim = []) => {
                 }
             })
             promise.then((result) => {
-                console.log(result);
                 let action2 = {
                     type: ADD_PHIM,
                     arletContent: result.data.message,
@@ -282,7 +280,6 @@ export const updateFilmAction = (formDataPhim = []) => {
                 }
             })
             promise.then((result) => {
-                console.log(result);
                 let action2 = {
                     type: UPDATE_PHIM,
                     arletContent: result.data.message,

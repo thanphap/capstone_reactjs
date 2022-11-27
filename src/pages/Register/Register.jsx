@@ -19,11 +19,13 @@ export default function Register() {
       hoTen: '',
       maNhom: GP_ID
     },
+
     validationSchema: Yup.object({
       taiKhoan: Yup.string().required("Tài khoản không được để trống"),
-      matKhau: Yup.string().required("Mật khẩu không được để trống"),
+      matKhau: Yup.string().required("Mật khẩu không được để trống").matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{0,}$/, "Mật khẩu không đúng định dạng"),
+      hoTen: Yup.string().required("Họ tên không được để trống").matches(/^[A-Z a-z]+$/, "Họ tên không đúng định dạng"),
+      soDt: Yup.string().required("Số điện thoại không được để trống").matches(/(((\+|)84)|0)(3|5|7|8|9)+([0-9]{8})\b/, "Số điện thoại không đúng định dạng"),
       email: Yup.string().required("Email không được để trống").email("Email chưa đúng định dạng"),
-      hoTen: Yup.string().required("Họ tên không được để trống").matches(/^[A-Z a-z]+$/, "Họ tên không đúng định dạng")
     }),
     onSubmit: values => {
       console.log(values)
@@ -33,38 +35,78 @@ export default function Register() {
   });
   return (
     <div className='py-5'>
-      <h2>Đăng ký thành viên</h2>
-      <form onSubmit={formik.handleSubmit}>
-        <div className="form-group">
-          <input name="taiKhoan" type="text" className="form-control" placeholder="Tài khoản" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.taiKhoan} />
+      <form className="form login" onSubmit={formik.handleSubmit}>
+        <div>
+          <div className="form__field">
+            <label htmlFor="taiKhoan">
+              <i className="fa fa-user icon" aria-hidden="true" />
+              <span className="hidden">Tài khoản</span></label>
+            <input name="taiKhoan" type="text" className="form__input" placeholder="Tài khoản" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.taiKhoan} />
+          </div>
           {formik.touched.taiKhoan && formik.errors.taiKhoan ? (
-            <div className='alert alert-danger'>{formik.errors.taiKhoan}</div>
+            <div className='alert__form'>{formik.errors.taiKhoan}</div>
           ) : null}
         </div>
-        <div className="form-group">
-          <input name="matKhau" type="password" className="form-control" placeholder="Mật khẩu" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.matKhau} />
+
+        <div>
+          <div className="form__field">
+            <label htmlFor="matKhau">
+              <i className="fa fa-lock icon" aria-hidden="true" />
+              <span className="hidden">Mật khẩu</span>
+            </label>
+            <input name="matKhau" type="password" className="form__input" placeholder="Mật khẩu" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.matKhau} />
+          </div>
           {formik.touched.matKhau && formik.errors.matKhau ? (
-            <div className='alert alert-danger'>{formik.errors.matKhau}</div>
+            <div className='alert__form'>{formik.errors.matKhau}</div>
           ) : null}
         </div>
-        <div className="form-group">
-          <input name="hoTen" type="text" className="form-control" placeholder="Họ tên" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.hoTen} />
+
+        <div>
+          <div className="form__field">
+            <label htmlFor="hoTen">
+              <i className="fa fa-user icon" aria-hidden="true" />
+              <span className="hidden">Họ tên</span>
+            </label>
+            <input name="hoTen" type="text" className="form__input" placeholder="Họ tên" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.hoTen} />
+          </div>
           {formik.touched.hoTen && formik.errors.hoTen ? (
-            <div className='alert alert-danger'>{formik.errors.hoTen}</div>
+            <div className='alert__form'>{formik.errors.hoTen}</div>
           ) : null}
         </div>
-        <div className="form-group">
-          <input name="soDt" type="text" className="form-control" placeholder="Số điện thoại" onChange={formik.handleChange} value={formik.values.soDt} />
-        </div>
-        <div className="form-group">
-          <input name="email" type="text" className="form-control" placeholder="Email" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} />
-          {formik.touched.hoTen && formik.errors.email ? (
-            <div className='alert alert-danger'>{formik.errors.email}</div>
+
+        <div>
+          <div className="form__field">
+            <label htmlFor="soDt">
+              <i className="fa fa-phone icon" aria-hidden="true" />
+              <span className="hidden">Số điện thoại</span>
+            </label>
+            <input name="soDt" type="text" className="form__input" placeholder="Số điện thoại" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.soDt} />
+          </div>
+          {formik.touched.soDt && formik.errors.soDt ? (
+            <div className='alert__form'>{formik.errors.soDt}</div>
           ) : null}
         </div>
-        <button type='button' className='btn btn-danger' data-toggle="modal" data-target="#registerModal">Đăng ký</button>
-        <NavLink className='btn btn-success mx-3' to='/login'>Đăng nhập</NavLink>
+        <div>
+          <div className="form__field">
+            <label htmlFor="email">
+              <i className="fa fa-envelope icon" aria-hidden="true" />
+              <span className="hidden">Email</span>
+            </label>
+            <input name="email" type="text" className="form__input" placeholder="Email" onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} />
+          </div>
+          {formik.touched.email && formik.errors.email ? (
+            <div className='alert__form'>{formik.errors.email}</div>
+          ) : null}
+        </div>
+
+        <div className="form__field">
+          <input type="submit" value="Đăng ký" />
+        </div>
       </form>
+      <p className="text--center">Bạn đã có tài khoản?<NavLink to='/login'>Đăng nhập</NavLink>
+        <i className="fa fa-arrow-right icon" aria-hidden="true" />
+      </p>
+
       <div className="modal fade" id="registerModal" tabIndex={-1} aria-labelledby="registerModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
@@ -78,9 +120,9 @@ export default function Register() {
               {alertRegister}
             </div>
             <div className="modal-footer">
-              <button onClick={() => { 
+              <button onClick={() => {
                 history.push('/login');
-               }} className="btn btn-primary" data-dismiss="modal">Đăng nhập</button>
+              }} className="btn btn-primary" data-dismiss="modal">Đăng nhập</button>
             </div>
           </div>
         </div>

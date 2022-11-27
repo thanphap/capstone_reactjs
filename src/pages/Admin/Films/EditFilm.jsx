@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAlertFilmAction, updateFilmAction } from '../../../redux/action/filmAction';
 import { history } from "../../../App"
 import dayjs from 'dayjs';
 import { Form, Input, Button, DatePicker, InputNumber, Switch, Upload, Modal } from 'antd';
+const { TextArea } = Input;
 
 export default function AddFilm(props) {
   let { mangPhim, arletContent } = useSelector(state => state.filmReducer)
@@ -48,6 +50,9 @@ export default function AddFilm(props) {
       hot: phim.hot,
       hinhAnh: phim.hinhAnh
     },
+    validationSchema: Yup.object({
+      tenPhim: Yup.string().required("Tên phim không được để trống"),
+    }),
     onSubmit: values => {
       let formData = new FormData();
       for (let value in values) {
@@ -99,14 +104,14 @@ export default function AddFilm(props) {
     <div className='p-5'>
       <Form labelCol={{ span: 4 }} wrapperCol={{ span: 14 }} layout="horizontal" onFinish={formik.handleSubmit}
         initialValues={formik.values}>
-        <Form.Item label="Tên phim" name="tenPhim">
+        <Form.Item label="Tên phim" name="tenPhim" validateStatus="error" help={formik.touched.tenPhim && formik.errors.tenPhim ? (formik.errors.tenPhim) : null}>
           <Input onChange={formik.handleChange} />
         </Form.Item>
         <Form.Item label="Xem thử" name="trailer">
           <Input onChange={formik.handleChange} />
         </Form.Item>
         <Form.Item label="Mô tả" name="moTa">
-          <Input onChange={formik.handleChange} />
+          <TextArea rows={4} onChange={formik.handleChange}/>
         </Form.Item>
         <Form.Item label="Lịch chiếu" name="ngayKhoiChieu">
           <DatePicker onChange={(date) => formik.setFieldValue('ngayKhoiChieu', date)} format='DD/MM/YYYY' />

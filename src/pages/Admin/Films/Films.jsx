@@ -22,6 +22,10 @@ export default function Films() {
     {
       title: 'Mã phim',
       dataIndex: 'maPhim',
+      sorter: {
+        compare: (a, b) => a.math - b.math,
+        multiple: 2,
+      },
     },
     {
       title: 'Hình ảnh',
@@ -40,10 +44,6 @@ export default function Films() {
     {
       title: 'Mô tả',
       dataIndex: 'moTa',
-      sorter: {
-        compare: (a, b) => a.math - b.math,
-        multiple: 2,
-      },
     },
     {
       title: 'Hàng động',

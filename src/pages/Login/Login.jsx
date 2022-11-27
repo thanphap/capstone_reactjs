@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { Fragment, useState } from 'react'
 import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginAction } from '../../redux/action/userAction';
@@ -20,18 +20,29 @@ export default function Login() {
   });
 
   return (
-    <div className="py-5">
-      <h2>Đăng nhập</h2>
-      <form onSubmit={formik.handleSubmit}>
-        <div className="form-group">
-          <input onChange={formik.handleChange} name="taiKhoan" type="text" className="form-control" placeholder="Enter Username" />
+    <Fragment>
+      <form className="form login" onSubmit={formik.handleSubmit}>
+        <div className="form__field">
+          <label htmlFor="taiKhoan">
+            <span className="hidden">Tài khoản</span>
+            <i className="fa fa-user icon" aria-hidden="true" />
+          </label>
+          <input onChange={formik.handleChange} name="taiKhoan" type="text" className="form__input" placeholder="Nhập tài khoản" required />
         </div>
-        <div className="form-group">
-          <input onChange={formik.handleChange} name="matKhau" type="password" className="form-control" placeholder="Enter Pass" />
+        <div className="form__field">
+          <label htmlFor="matKhau">
+            <i className="fa fa-lock icon" aria-hidden="true" />
+            <span className="hidden">Mật khẩu</span>
+          </label>
+          <input onChange={formik.handleChange} name="matKhau" type="password" className="form__input" placeholder="Nhập mật khẩu" required />
         </div>
-        <button className='btn btn-success'>Đăng nhập</button>
-        <NavLink className='btn btn-danger mx-3' to="/register">Đăng ký</NavLink>
+        <div className="form__field">
+          <input type="submit" value="Đăng nhập" />
+        </div>
       </form>
+      <p className="text--center">Bạn chưa là thành viên?<NavLink to="/register">Đăng ký ngay</NavLink>
+        <i className="fa fa-arrow-right icon" aria-hidden="true" />
+      </p>
       <div className="modal fade" id="loginModal" tabIndex={-1} aria-labelledby="loginModalLabel" aria-hidden="true">
         <div className="modal-dialog" id='openModal' data-toggle="modal" data-target="#loginModal">
           <div className="modal-content">
@@ -47,6 +58,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </div>
+    </Fragment>
   )
 }
