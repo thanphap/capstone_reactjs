@@ -108,9 +108,9 @@ export default function Home() {
             <img className="blur-up post-thumb lazyloaded" src={phim.hinhAnh} alt="" />
           </div>
           <h3 className="title">{phim.tenPhim}</h3>
-          <p className="original_title">Fights Break Sphere 5</p>
+          <p className="original_title">Ngày khởi chiếu: {Moment(phim.ngayKhoiChieu).format('DD/MM/YYYY')}</p>
         </NavLink>
-        <div className="viewsCount">82.6K lượt xem</div>
+        <div className="viewsCount">Đánh giá: {phim.danhGia}/10</div>
       </div>
     })
   }
