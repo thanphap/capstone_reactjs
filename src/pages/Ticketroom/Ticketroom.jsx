@@ -50,14 +50,16 @@ export default function Ticketroom(props) {
   
   let renderChairList = () => {
     return cvmGhe.map((chairs) => {
-      return <tr key={chairs.hang}>
-        <th className='firstChar'>{chairs.hang}</th>
+      return <div className='row align-items-center row__chair' key={chairs.hang}>
+        <div className='col-1 firstChar'>{chairs.hang}</div>
+        <div className='col-11 row col__chair'>
         {chairs.danhSachGhe.map((chair, index) => {
-          return <th key={chair.tenGhe}>
+          return <div className='col-2 col-sm-1 col-md point' key={chair.tenGhe}>
             {renderChair(chair, index)}
-          </th>
+          </div>
         })}
-      </tr>
+        </div>
+      </div>
     })
   }
 
@@ -96,12 +98,8 @@ export default function Ticketroom(props) {
             <p className='text-white mb-0 text-center'>Màn hình</p>
             <div className='screen'>
             </div>
-            <div>
-              <table className='mx-auto'>
-                <tbody>
-                  {renderChairList()}
-                </tbody>
-              </table>
+            <div className='mx-auto'>
+              {renderChairList()}
             </div>
           </div>
           <div className="col-12 col-xl-4 px-3">
